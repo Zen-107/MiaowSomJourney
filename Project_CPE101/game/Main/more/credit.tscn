@@ -1,0 +1,110 @@
+[gd_scene load_steps=8 format=3 uid="uid://dejr02wu1eyyo"]
+
+[ext_resource type="Texture2D" uid="uid://c6o86k6wmsudx" path="res://resource/background/mainmenu.png" id="1_dtbba"]
+[ext_resource type="Script" path="res://game/Main/more/credit.gd" id="1_kk2aa"]
+[ext_resource type="FontFile" uid="uid://s2xisdc73rrc" path="res://resource/font/SomO/SomODemo.ttf" id="2_okmnq"]
+[ext_resource type="Texture2D" uid="uid://dpppx1ubh3p4f" path="res://resource/characters/monsters/กีกี้คนสวย.PNG" id="4_se1v5"]
+[ext_resource type="Texture2D" uid="uid://bdnlm2g1ps8ux" path="res://resource/characters/monsters/นุ่ยนุ้ยนาย.PNG" id="5_sdh0j"]
+[ext_resource type="Texture2D" uid="uid://p46fov37n1dd" path="res://resource/characters/monsters/บั่วบั้ว.PNG" id="6_2a2qu"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d6618"]
+bg_color = Color(0.772549, 0.615686, 0.254902, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[node name="credit" type="Node2D"]
+position = Vector2(576, 324)
+script = ExtResource("1_kk2aa")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -576.0
+offset_top = -324.0
+offset_right = 576.0
+offset_bottom = 324.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_dtbba")
+
+[node name="studios" type="Label" parent="."]
+offset_left = -208.0
+offset_top = -318.0
+offset_right = 205.0
+offset_bottom = -231.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_okmnq")
+theme_override_font_sizes/font_size = 60
+text = "Ting Tong Studios"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabel" type="Label" parent="."]
+offset_left = -264.0
+offset_top = 76.0
+offset_right = 266.0
+offset_bottom = 185.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_okmnq")
+theme_override_font_sizes/font_size = 36
+text = "DESIGN DIRECTOR AND ART DIRECTOR
+Phanatchakorn Phuthong
+"
+horizontal_alignment = 1
+
+[node name="RichTextLabel2" type="Label" parent="."]
+offset_left = -312.0
+offset_top = -60.0
+offset_right = 304.0
+offset_bottom = 49.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_okmnq")
+theme_override_font_sizes/font_size = 36
+text = "TECHNICAL DIRECTOR
+Phisinee Manomaneerat"
+horizontal_alignment = 1
+
+[node name="RichTextLabel3" type="Label" parent="."]
+offset_left = -256.0
+offset_top = -188.0
+offset_right = 262.0
+offset_bottom = -60.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_okmnq")
+theme_override_font_sizes/font_size = 36
+text = "PRODUCER AND NARRATIVE DESIGNER
+Thanittha Sinlapawisut"
+horizontal_alignment = 1
+
+[node name="Exit" type="Button" parent="."]
+offset_left = -552.0
+offset_top = -300.0
+offset_right = -416.0
+offset_bottom = -236.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_okmnq")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxFlat_d6618")
+text = "Back"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-280, 250)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("4_se1v5")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(296, 250)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("5_sdh0j")
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+position = Vector2(-8, 252)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("6_2a2qu")
+
+[connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]

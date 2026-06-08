@@ -1,0 +1,68 @@
+[gd_scene load_steps=6 format=3 uid="uid://dyk7t03vtuydn"]
+
+[ext_resource type="FontFile" uid="uid://s2xisdc73rrc" path="res://resource/font/SomO/SomODemo.ttf" id="1_ngtsu"]
+[ext_resource type="Script" path="res://game/Main/start/select/level/level2/morelevel_2.gd" id="1_yjody"]
+[ext_resource type="Texture2D" uid="uid://cn60cc32jfoqd" path="res://resource/background/LINE_ALBUM_พื้นหลัง_241126_4.jpg" id="2_1xiss"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3f7iw"]
+bg_color = Color(0.568627, 0.819608, 0.411765, 0.972549)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fiags"]
+bg_color = Color(0.772549, 0.615686, 0.254902, 1)
+
+[node name="morelevel2" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_yjody")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_3f7iw")
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer"]
+layout_mode = 2
+texture = ExtResource("2_1xiss")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+alignment = 1
+
+[node name="resume" type="Button" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_ngtsu")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxFlat_fiags")
+text = "Restart"
+
+[node name="Home" type="Button" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_ngtsu")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxFlat_fiags")
+text = "Home"
+
+[node name="restart" type="Button" parent="PanelContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_ngtsu")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxFlat_fiags")
+text = "Restart"
+
+[connection signal="pressed" from="PanelContainer/VBoxContainer/resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/Home" to="." method="_on_home_pressed"]

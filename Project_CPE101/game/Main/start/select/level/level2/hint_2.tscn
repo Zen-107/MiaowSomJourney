@@ -1,0 +1,45 @@
+[gd_scene load_steps=5 format=3 uid="uid://b84lfgp5iuprk"]
+
+[ext_resource type="Script" path="res://game/Main/start/select/level/level2/hint_2.gd" id="1_fxujo"]
+[ext_resource type="Texture2D" uid="uid://dupdtrnivaxpm" path="res://resource/hint/คำใบ้__2_-removebg.png" id="1_lkqsb"]
+[ext_resource type="FontFile" uid="uid://s2xisdc73rrc" path="res://resource/font/SomO/SomODemo.ttf" id="2_2646v"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4gscp"]
+bg_color = Color(0.772549, 0.615686, 0.254902, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[node name="hint2" type="CanvasLayer"]
+script = ExtResource("1_fxujo")
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel2" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 192.0
+offset_top = 48.0
+offset_right = -160.0
+offset_bottom = -48.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_lkqsb")
+
+[node name="back" type="Button" parent="."]
+offset_left = 32.0
+offset_top = 40.0
+offset_right = 160.0
+offset_bottom = 96.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_2646v")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxFlat_4gscp")
+text = "Back"

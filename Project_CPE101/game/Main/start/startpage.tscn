@@ -1,0 +1,102 @@
+[gd_scene load_steps=6 format=3 uid="uid://buyprh36a22h1"]
+
+[ext_resource type="Script" path="res://game/Main/start/startpage.gd" id="1_7fe6q"]
+[ext_resource type="Texture2D" uid="uid://bp8cmveu0tkay" path="res://resource/background/LINE_ALBUM_พื้นหลัง_241126_5.jpg" id="1_84gob"]
+[ext_resource type="FontFile" uid="uid://s2xisdc73rrc" path="res://resource/font/SomO/SomODemo.ttf" id="2_f572a"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yhuqe"]
+bg_color = Color(0.773543, 0.446587, 0.206245, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iuecn"]
+bg_color = Color(0.772549, 0.447059, 0.207843, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+shadow_color = Color(0.251225, 0.191, 0.0496158, 1)
+shadow_size = 3
+shadow_offset = Vector2(2, 5)
+
+[node name="Startpage" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7fe6q")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_84gob")
+
+[node name="level" type="Button" parent="TextureRect"]
+layout_mode = 2
+offset_left = 352.0
+offset_top = 168.0
+offset_right = 792.0
+offset_bottom = 221.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_f572a")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxFlat_yhuqe")
+text = "level"
+
+[node name="Label" type="Label" parent="TextureRect"]
+layout_mode = 2
+offset_left = 284.0
+offset_top = 231.0
+offset_right = 859.0
+offset_bottom = 271.0
+theme_override_fonts/font = ExtResource("2_f572a")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_iuecn")
+text = "ด่านปกติที่คุณต้องต่อสู้กับมอนเตอร์และผ่าฟันอุปสรรคเพื่อไปหาเจ้าหญิง"
+horizontal_alignment = 1
+
+[node name="Create" type="Button" parent="TextureRect"]
+layout_mode = 2
+offset_left = 432.0
+offset_top = 392.0
+offset_right = 730.0
+offset_bottom = 445.0
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_f572a")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxFlat_yhuqe")
+disabled = true
+text = "Create Map"
+
+[node name="load" type="Button" parent="TextureRect"]
+layout_mode = 2
+offset_left = 432.0
+offset_top = 472.0
+offset_right = 730.0
+offset_bottom = 525.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_f572a")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxFlat_yhuqe")
+disabled = true
+text = "Load"
+
+[node name="Back" type="Button" parent="TextureRect"]
+layout_mode = 2
+offset_left = 22.0
+offset_top = 29.0
+offset_right = 180.0
+offset_bottom = 82.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_f572a")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxFlat_yhuqe")
+text = "Back"
+
+[connection signal="pressed" from="TextureRect/level" to="." method="_on_level_pressed"]
+[connection signal="pressed" from="TextureRect/Back" to="." method="_on_back_pressed"]

@@ -1,0 +1,68 @@
+[gd_scene load_steps=5 format=3 uid="uid://dd4d1e8d3yxpv"]
+
+[ext_resource type="Texture2D" uid="uid://cwhha3bny232f" path="res://resource/background/LINE_ALBUM_พื้นหลัง_241126_1.jpg" id="1_atba1"]
+[ext_resource type="Script" path="res://game/Main/howto/howto.gd" id="1_m1y5s"]
+[ext_resource type="FontFile" uid="uid://s2xisdc73rrc" path="res://resource/font/SomO/SomODemo.ttf" id="2_81r5r"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mdakv"]
+bg_color = Color(0.774401, 0.614317, 0.2552, 0.847059)
+
+[node name="howto" type="Node2D"]
+script = ExtResource("1_m1y5s")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1152.0
+offset_bottom = 648.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("1_atba1")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 357.0
+offset_top = 191.0
+offset_right = 802.0
+offset_bottom = 512.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+expand_mode = 1
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 472.0
+offset_top = 42.0
+offset_right = 680.0
+offset_bottom = 95.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_81r5r")
+theme_override_font_sizes/font_size = 36
+text = "How to play ...."
+
+[node name="Back" type="Button" parent="."]
+offset_left = 27.0
+offset_top = 26.0
+offset_right = 185.0
+offset_bottom = 79.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_81r5r")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxFlat_mdakv")
+text = "Back"
+
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]

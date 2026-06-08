@@ -1,0 +1,70 @@
+[gd_scene load_steps=6 format=3 uid="uid://bdxhwdumho4b7"]
+
+[ext_resource type="Script" path="res://game/Main/start/select/level/level1/morelevel_1.gd" id="1_gjva8"]
+[ext_resource type="Texture2D" uid="uid://bp8cmveu0tkay" path="res://resource/background/LINE_ALBUM_พื้นหลัง_241126_5.jpg" id="2_5gpl8"]
+[ext_resource type="FontFile" uid="uid://s2xisdc73rrc" path="res://resource/font/SomO/SomODemo.ttf" id="2_q60d4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qmg8f"]
+bg_color = Color(0.582389, 0.848809, 0.383916, 0.411765)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2nofw"]
+bg_color = Color(0.772549, 0.615686, 0.254902, 1)
+
+[node name="morelevel1" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gjva8")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qmg8f")
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer"]
+layout_mode = 2
+texture = ExtResource("2_5gpl8")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+alignment = 1
+
+[node name="resume" type="Button" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_q60d4")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxFlat_2nofw")
+text = "Restart"
+
+[node name="Home" type="Button" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_q60d4")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxFlat_2nofw")
+text = "Home"
+
+[node name="restart" type="Button" parent="PanelContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_q60d4")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxFlat_2nofw")
+text = "Restart"
+
+[connection signal="pressed" from="PanelContainer/VBoxContainer/resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/Home" to="." method="_on_home_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/restart" to="." method="_on_restart_pressed"]

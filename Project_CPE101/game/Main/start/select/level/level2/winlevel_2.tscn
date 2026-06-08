@@ -1,0 +1,118 @@
+[gd_scene load_steps=7 format=3 uid="uid://cxyya6o114tkb"]
+
+[ext_resource type="Script" path="res://game/Main/start/select/level/level2/winlevel_2.gd" id="1_qfamx"]
+[ext_resource type="Texture2D" uid="uid://cn60cc32jfoqd" path="res://resource/background/LINE_ALBUM_พื้นหลัง_241126_4.jpg" id="2_1b8oc"]
+[ext_resource type="FontFile" uid="uid://s2xisdc73rrc" path="res://resource/font/SomO/SomODemo.ttf" id="2_wj3sr"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ynwd0"]
+bg_color = Color(0.772549, 0.615686, 0.254902, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2jbyc"]
+bg_color = Color(1, 1, 1, 0.52549)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jnr21"]
+bg_color = Color(0.772549, 0.615686, 0.254902, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[node name="winlevel2" type="Node2D"]
+position = Vector2(576, 324)
+script = ExtResource("1_qfamx")
+
+[node name="BG" type="TextureRect" parent="."]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -576.0
+offset_top = -324.0
+offset_right = 576.0
+offset_bottom = 324.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_1b8oc")
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = -1
+anchor_right = 0.5
+offset_left = -552.0
+offset_top = -308.0
+offset_right = -376.0
+offset_bottom = -203.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.362829, 0.362829, 0.362829, 1)
+theme_override_colors/font_outline_color = Color(0.813458, 0.850611, 0.311767, 1)
+theme_override_fonts/font = ExtResource("2_wj3sr")
+theme_override_font_sizes/font_size = 72
+theme_override_styles/normal = SubResource("StyleBoxFlat_ynwd0")
+text = "Win"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="pathline" type="Line2D" parent="."]
+position = Vector2(-450, 90)
+points = PackedVector2Array(0, -8)
+default_color = Color(0, 0, 0, 1)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="ResultLabel" type="Label" parent="."]
+offset_left = -364.0
+offset_top = -300.0
+offset_right = -324.0
+offset_bottom = -247.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_wj3sr")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_2jbyc")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="home" type="Button" parent="."]
+offset_left = -536.0
+offset_top = 244.0
+offset_right = -360.0
+offset_bottom = 314.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_wj3sr")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxFlat_jnr21")
+text = "Home"
+
+[node name="restart" type="Button" parent="."]
+offset_left = -344.0
+offset_top = 244.0
+offset_right = -176.0
+offset_bottom = 314.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_wj3sr")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxFlat_jnr21")
+text = "Restart"
+
+[node name="next" type="Button" parent="."]
+offset_left = 400.0
+offset_top = 244.0
+offset_right = 552.0
+offset_bottom = 314.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_wj3sr")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxFlat_jnr21")
+text = "Next"
+
+[connection signal="pressed" from="home" to="." method="_on_home_pressed"]
+[connection signal="pressed" from="restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="next" to="." method="_on_next_pressed"]

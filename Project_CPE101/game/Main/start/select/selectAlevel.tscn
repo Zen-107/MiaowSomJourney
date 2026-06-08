@@ -1,0 +1,93 @@
+[gd_scene load_steps=6 format=3 uid="uid://crfmc5k1rv11i"]
+
+[ext_resource type="Texture2D" uid="uid://bp8cmveu0tkay" path="res://resource/background/LINE_ALBUM_พื้นหลัง_241126_5.jpg" id="1_6wbjx"]
+[ext_resource type="Script" path="res://game/Main/start/select/select_alevel.gd" id="1_h882i"]
+[ext_resource type="FontFile" uid="uid://s2xisdc73rrc" path="res://resource/font/SomO/SomODemo.ttf" id="2_yg13q"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0jsku"]
+bg_color = Color(0.097621, 0.540546, 0.144502, 1)
+corner_radius_top_left = 100
+corner_radius_top_right = 100
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bqdkb"]
+bg_color = Color(0.0980392, 0.541176, 0.145098, 1)
+
+[node name="SelectAlevel" type="Node2D"]
+position = Vector2(576, 324)
+script = ExtResource("1_h882i")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_6wbjx")
+
+[node name="level1" type="Button" parent="."]
+offset_left = -416.0
+offset_top = -100.0
+offset_right = -224.0
+offset_bottom = 92.0
+size_flags_horizontal = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_yg13q")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxFlat_0jsku")
+text = "1"
+
+[node name="level2" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -96.0
+offset_top = -96.0
+offset_right = 96.0
+offset_bottom = 96.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_yg13q")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxFlat_0jsku")
+text = "2"
+
+[node name="level3" type="Button" parent="."]
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 224.0
+offset_top = -100.0
+offset_right = 416.0
+offset_bottom = 92.0
+grow_horizontal = 0
+grow_vertical = 2
+size_flags_horizontal = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_yg13q")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxFlat_0jsku")
+text = "3"
+
+[node name="Back" type="Button" parent="."]
+offset_left = -544.0
+offset_top = -300.0
+offset_right = -386.0
+offset_bottom = -247.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_yg13q")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxFlat_bqdkb")
+text = "Back"
+
+[connection signal="pressed" from="level1" to="." method="_on_level_1_pressed"]
+[connection signal="pressed" from="level2" to="." method="_on_level_2_pressed"]
+[connection signal="pressed" from="level3" to="." method="_on_level_3_pressed"]
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]

@@ -1,0 +1,47 @@
+[gd_scene load_steps=5 format=3 uid="uid://bax30d1llj03b"]
+
+[ext_resource type="Texture2D" uid="uid://bma5pw05t2uug" path="res://resource/hint/hint1.png" id="1_cv8m0"]
+[ext_resource type="Script" path="res://game/Main/start/select/level/level1/hint_1.gd" id="1_ryqta"]
+[ext_resource type="FontFile" uid="uid://s2xisdc73rrc" path="res://resource/font/SomO/SomODemo.ttf" id="2_nvx05"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sgvfq"]
+bg_color = Color(0.772549, 0.615686, 0.254902, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[node name="hint1" type="CanvasLayer"]
+script = ExtResource("1_ryqta")
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel2" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 200.0
+offset_top = 56.0
+offset_right = -152.0
+offset_bottom = -40.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_cv8m0")
+
+[node name="back" type="Button" parent="."]
+offset_left = 32.0
+offset_top = 40.0
+offset_right = 160.0
+offset_bottom = 96.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_nvx05")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxFlat_sgvfq")
+text = "Back"
+
+[connection signal="pressed" from="back" to="." method="_on_back_pressed"]

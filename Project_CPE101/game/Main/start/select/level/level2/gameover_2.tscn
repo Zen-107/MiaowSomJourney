@@ -1,0 +1,139 @@
+[gd_scene load_steps=8 format=3 uid="uid://dis2gom04jjm0"]
+
+[ext_resource type="Script" path="res://game/Main/start/select/level/level2/gameover_2.gd" id="1_dupn5"]
+[ext_resource type="FontFile" uid="uid://dcoqvi18ma4jp" path="res://resource/font/SomO/SomODemo.woff" id="1_qtnml"]
+[ext_resource type="FontFile" uid="uid://s2xisdc73rrc" path="res://resource/font/SomO/SomODemo.ttf" id="2_qdyjl"]
+[ext_resource type="Texture2D" uid="uid://dqui2oj7d2426" path="res://resource/characters/monsters/กาก.PNG" id="3_8k387"]
+[ext_resource type="Texture2D" uid="uid://p46fov37n1dd" path="res://resource/characters/monsters/บั่วบั้ว.PNG" id="5_nl4mi"]
+[ext_resource type="Texture2D" uid="uid://dh7rmypgwepuh" path="res://resource/characters/monsters/กากอ้วน.PNG" id="6_6m8be"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_avtl6"]
+bg_color = Color(0.772549, 0.615686, 0.254902, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[node name="gameover2" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_dupn5")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -280.0
+offset_top = 34.0
+offset_right = 266.0
+offset_bottom = 220.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_qtnml")
+theme_override_font_sizes/font_size = 128
+text = "Game Over"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -184.0
+offset_top = -130.0
+offset_right = 816.0
+offset_bottom = 870.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.261799
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("3_8k387")
+
+[node name="retry" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.889757
+anchor_top = 0.858025
+anchor_right = -0.733507
+anchor_bottom = 0.875
+offset_left = 1473.0
+offset_top = -266.0
+offset_right = 1549.0
+offset_bottom = -213.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_qdyjl")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxFlat_avtl6")
+text = "Retry"
+
+[node name="home" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.889757
+anchor_top = 0.858025
+anchor_right = -0.733507
+anchor_bottom = 0.875
+offset_left = 1473.0
+offset_top = -138.0
+offset_right = 1549.0
+offset_bottom = -85.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_qdyjl")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxFlat_avtl6")
+text = "Home"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -240.0
+offset_top = -36.0
+offset_right = 760.0
+offset_bottom = 964.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 3.14159
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("5_nl4mi")
+
+[node name="TextureRect3" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 184.0
+offset_top = -36.0
+offset_right = 1184.0
+offset_bottom = 964.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("6_6m8be")
+
+[connection signal="pressed" from="retry" to="." method="_on_retry_pressed"]
+[connection signal="pressed" from="home" to="." method="_on_home_pressed"]

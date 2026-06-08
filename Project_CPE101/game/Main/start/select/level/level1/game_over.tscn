@@ -1,0 +1,118 @@
+[gd_scene load_steps=7 format=3 uid="uid://byrjfiqtsgcfm"]
+
+[ext_resource type="Script" path="res://game/Main/start/select/level/level1/game_over.gd" id="1_chqf1"]
+[ext_resource type="FontFile" uid="uid://dcoqvi18ma4jp" path="res://resource/font/SomO/SomODemo.woff" id="1_ofnpa"]
+[ext_resource type="Texture2D" uid="uid://dh7rmypgwepuh" path="res://resource/characters/monsters/กากอ้วน.PNG" id="2_05l4i"]
+[ext_resource type="FontFile" uid="uid://s2xisdc73rrc" path="res://resource/font/SomO/SomODemo.ttf" id="2_al3af"]
+[ext_resource type="Texture2D" uid="uid://dqui2oj7d2426" path="res://resource/characters/monsters/กาก.PNG" id="4_gqkxj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nu3yv"]
+bg_color = Color(0.772549, 0.615686, 0.254902, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[node name="game over" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+script = ExtResource("1_chqf1")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -248.0
+offset_top = -244.0
+offset_right = 752.0
+offset_bottom = 756.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_05l4i")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -273.0
+offset_right = 273.0
+offset_bottom = 186.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_ofnpa")
+theme_override_font_sizes/font_size = 128
+text = "Game Over"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -440.0
+offset_top = 108.0
+offset_right = 560.0
+offset_bottom = 1108.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.261799
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("4_gqkxj")
+
+[node name="retry" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.889757
+anchor_top = 0.858025
+anchor_right = -0.733507
+anchor_bottom = 0.875
+offset_left = 1257.0
+offset_top = -36.0002
+offset_right = 1333.0
+offset_bottom = 16.9998
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_al3af")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxFlat_nu3yv")
+text = "Retry"
+
+[node name="home" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.889757
+anchor_top = 0.858025
+anchor_right = -0.733507
+anchor_bottom = 0.875
+offset_left = 1673.0
+offset_top = -44.0002
+offset_right = 1749.0
+offset_bottom = 8.99982
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_al3af")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxFlat_nu3yv")
+text = "Home"
+
+[connection signal="pressed" from="retry" to="." method="_on_retry_pressed"]
+[connection signal="pressed" from="home" to="." method="_on_home_pressed"]

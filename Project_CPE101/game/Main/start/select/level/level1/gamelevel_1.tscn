@@ -1,0 +1,284 @@
+[gd_scene load_steps=14 format=3 uid="uid://hptfcpbmnfwi"]
+
+[ext_resource type="Script" path="res://game/Main/start/select/level/level1/gamelevel_1.gd" id="1_6pbcv"]
+[ext_resource type="Texture2D" uid="uid://bp8cmveu0tkay" path="res://resource/background/LINE_ALBUM_พื้นหลัง_241126_5.jpg" id="1_7ouky"]
+[ext_resource type="FontFile" uid="uid://s2xisdc73rrc" path="res://resource/font/SomO/SomODemo.ttf" id="3_swkyt"]
+[ext_resource type="Texture2D" uid="uid://tye85a8oxjb8" path="res://resource/characters/maincha/แมว.png" id="4_81nyl"]
+[ext_resource type="PackedScene" uid="uid://bdxhwdumho4b7" path="res://game/Main/start/select/level/level1/morelevel_1.tscn" id="5_d5d25"]
+[ext_resource type="Texture2D" uid="uid://d00vdrujgp72n" path="res://resource/background/line.png" id="6_dm13x"]
+[ext_resource type="Texture2D" uid="uid://d0fnjxj5tiujg" path="res://resource/item/ใจ.PNG" id="7_o8sf3"]
+[ext_resource type="Texture2D" uid="uid://ccdmnao57elfe" path="res://resource/characters/princess/ปลาทูนูน.PNG" id="8_wofjr"]
+[ext_resource type="Script" path="res://game/Main/data_store.gd" id="9_s1ymh"]
+[ext_resource type="FontFile" uid="uid://dcoqvi18ma4jp" path="res://resource/font/SomO/SomODemo.woff" id="10_0jec5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8tcxf"]
+bg_color = Color(0.772549, 0.615686, 0.254902, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2hxu5"]
+bg_color = Color(0.772549, 0.615686, 0.254902, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1kbjr"]
+texture = ExtResource("7_o8sf3")
+
+[node name="gamelevel1" type="Node2D"]
+position = Vector2(576, 324)
+script = ExtResource("1_6pbcv")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -576.0
+offset_top = -325.0
+offset_right = 576.0
+offset_bottom = 323.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 4
+texture = ExtResource("1_7ouky")
+
+[node name="maincha" type="Sprite2D" parent="TextureRect"]
+visible = false
+position = Vector2(334, 242)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("4_81nyl")
+centered = false
+
+[node name="TextureRect2" type="TextureRect" parent="TextureRect"]
+layout_mode = 0
+offset_left = 376.0
+offset_top = 321.0
+offset_right = 712.0
+offset_bottom = 401.0
+texture = ExtResource("6_dm13x")
+
+[node name="TextureRect3" type="TextureRect" parent="TextureRect"]
+layout_mode = 0
+offset_left = 318.0
+offset_top = 349.0
+offset_right = 556.0
+offset_bottom = 429.0
+rotation = -0.698132
+texture = ExtResource("6_dm13x")
+
+[node name="TextureRect4" type="TextureRect" parent="TextureRect"]
+layout_mode = 0
+offset_left = 376.0
+offset_top = 337.0
+offset_right = 614.0
+offset_bottom = 417.0
+rotation = 0.698132
+texture = ExtResource("6_dm13x")
+
+[node name="TextureRect5" type="TextureRect" parent="TextureRect"]
+layout_mode = 0
+offset_left = 528.0
+offset_top = 469.0
+offset_right = 766.0
+offset_bottom = 549.0
+texture = ExtResource("6_dm13x")
+
+[node name="A" type="Button" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.641493
+anchor_top = 0.382716
+anchor_right = -0.58941
+anchor_bottom = 0.449074
+offset_left = 1039.0
+offset_top = 76.0
+offset_right = 1059.0
+offset_bottom = 113.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_swkyt")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxFlat_8tcxf")
+keep_pressed_outside = true
+text = "A"
+metadata/_edit_use_anchors_ = true
+
+[node name="B" type="Button" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.466146
+anchor_top = 0.117284
+anchor_right = -0.422743
+anchor_bottom = 0.146605
+offset_left = 1037.0
+offset_top = 107.0
+offset_right = 1062.0
+offset_bottom = 168.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_swkyt")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxFlat_8tcxf")
+text = "B"
+metadata/_edit_use_anchors_ = true
+
+[node name="C" type="Button" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.471354
+anchor_top = 0.381173
+anchor_right = -0.419271
+anchor_bottom = 0.447531
+offset_left = 1043.0
+offset_top = 76.9999
+offset_right = 1063.0
+offset_bottom = 114.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_swkyt")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxFlat_8tcxf")
+text = "C"
+metadata/_edit_use_anchors_ = true
+
+[node name="D" type="Button" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.47309
+anchor_top = 0.660494
+anchor_right = -0.421007
+anchor_bottom = 0.726852
+offset_left = 1045.0
+offset_top = 36.9999
+offset_right = 1065.0
+offset_bottom = 73.9999
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_swkyt")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxFlat_8tcxf")
+text = "D"
+metadata/_edit_use_anchors_ = true
+
+[node name="E" type="Button" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.292535
+anchor_top = 0.376543
+anchor_right = -0.240452
+anchor_bottom = 0.442901
+offset_left = 1037.0
+offset_top = 80.0002
+offset_right = 1057.0
+offset_bottom = 117.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_swkyt")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxFlat_8tcxf")
+text = "E"
+metadata/_edit_use_anchors_ = true
+
+[node name="F" type="Button" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.292535
+anchor_top = 0.67284
+anchor_right = -0.240452
+anchor_bottom = 0.739199
+offset_left = 1037.0
+offset_top = 28.9997
+offset_right = 1057.0
+offset_bottom = 65.9991
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_swkyt")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxFlat_8tcxf")
+text = "F"
+metadata/_edit_use_anchors_ = true
+
+[node name="hint" type="Button" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.889757
+anchor_top = 0.858025
+anchor_right = -0.889757
+anchor_bottom = 0.858025
+offset_left = 1049.0
+offset_top = 20.9998
+offset_right = 1123.0
+offset_bottom = 73.9998
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_swkyt")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxFlat_2hxu5")
+text = "Hint"
+metadata/_edit_use_anchors_ = true
+
+[node name="More" type="Button" parent="."]
+offset_left = 473.0
+offset_top = -304.0
+offset_right = 547.0
+offset_bottom = -251.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_swkyt")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxFlat_2hxu5")
+text = "Quit"
+metadata/_edit_use_anchors_ = true
+
+[node name="morelevel1" parent="More" instance=ExtResource("5_d5d25")]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -510.0
+offset_top = 277.5
+offset_right = -510.0
+offset_bottom = 277.5
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="HPlabel" type="Label" parent="."]
+offset_left = -544.0
+offset_top = -308.0
+offset_right = -456.0
+offset_bottom = -220.0
+theme_override_fonts/font = ExtResource("3_swkyt")
+theme_override_font_sizes/font_size = 54
+theme_override_styles/normal = SubResource("StyleBoxTexture_1kbjr")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ปลาทูนูน" type="Sprite2D" parent="."]
+position = Vector2(200, 12)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("8_wofjr")
+
+[node name="DataStore" type="Node" parent="."]
+script = ExtResource("9_s1ymh")
+
+[node name="Popuplabel" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -136.0
+offset_top = 244.0
+offset_right = 136.0
+offset_bottom = 320.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.831112, 3.0563e-06, 6.73831e-07, 1)
+theme_override_fonts/font = ExtResource("10_0jec5")
+theme_override_font_sizes/font_size = 30
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[connection signal="pressed" from="TextureRect/A" to="." method="_on_a_pressed"]
+[connection signal="pressed" from="TextureRect/B" to="." method="_on_b_pressed"]
+[connection signal="pressed" from="TextureRect/C" to="." method="_on_c_pressed"]
+[connection signal="pressed" from="TextureRect/D" to="." method="_on_d_pressed"]
+[connection signal="pressed" from="TextureRect/E" to="." method="_on_e_pressed"]
+[connection signal="pressed" from="TextureRect/F" to="." method="_on_f_pressed"]
+[connection signal="pressed" from="TextureRect/hint" to="." method="_on_hint_pressed"]
+[connection signal="pressed" from="More" to="." method="_on_more_pressed"]
