@@ -3,7 +3,7 @@ extends Node2D
 # ==============================================================================
 # CONSTANTS (ค่าคงที่)
 # ==============================================================================
-const SCENE_WIN := "res://game/Main/start/select/level/level2/winlevel_2.tscn"
+const SCENE_WIN := "res://game/Main/winlevel_X.tscn"
 const SCENE_GAME_OVER := "res://game/Main/start/select/level/level2/gameover_2.tscn"
 const SCENE_MONSTER := "res://game/Main/start/select/Mon/monfight.tscn"
 const SCENE_ITEM := "res://game/Main/start/select/showitem/showitem.tscn"

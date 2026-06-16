@@ -1,7 +1,10 @@
 extends Node
 
-var path_positions: Array = []           # ตำแหน่งของเส้นทางที่ตัวละครเดิน
-var path_buttons: Array = []             # ชื่อปุ่มที่ตัวละครสำรวจ
+# ข้อมูลเส้นทาง
+var path_positions: Array[Vector2] = []
+var path_buttons: Array[String] = []
+var current_level: int = 1
+var total_nodes_in_level: int = 0
 
 # คืนค่าตำแหน่งทั้งหมดของเส้นทางที่ตัวละครเดิน
 func get_path_positions() -> Array:
@@ -25,3 +28,5 @@ func add_path_button(button_name: String) -> void:
 func reset_data() -> void:
 	path_positions.clear()
 	path_buttons.clear()
+	current_level = 1
+	total_nodes_in_level = 0

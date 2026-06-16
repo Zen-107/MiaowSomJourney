@@ -1,9 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://lejrhcxa2mcc"]
+[gd_scene format=3 uid="uid://lejrhcxa2mcc"]
 
-[ext_resource type="Script" path="res://game/Main/start/select/level/level1/winlevel_1.gd" id="1_xbadw"]
-[ext_resource type="FontFile" uid="uid://s2xisdc73rrc" path="res://resource/font/SomO/SomODemo.ttf" id="2_80hn0"]
-[ext_resource type="Texture2D" uid="uid://bp8cmveu0tkay" path="res://resource/background/LINE_ALBUM_พื้นหลัง_241126_5.jpg" id="2_jhaom"]
-[ext_resource type="Texture2D" uid="uid://tye85a8oxjb8" path="res://resource/characters/maincha/แมว.png" id="4_bopdc"]
+[ext_resource type="Script" uid="uid://doodkc82trjtf" path="res://game/Main/winlevel_X.gd" id="1_8v2ct"]
+[ext_resource type="Texture2D" uid="uid://bp8cmveu0tkay" path="res://resource/background/LINE_ALBUM_พื้นหลัง_241126_5.jpg" id="2_v2m4w"]
+[ext_resource type="FontFile" uid="uid://s2xisdc73rrc" path="res://resource/font/SomO/SomODemo.ttf" id="3_bdtos"]
+[ext_resource type="Texture2D" uid="uid://tye85a8oxjb8" path="res://resource/characters/maincha/แมว.png" id="4_vmier"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e0dcd"]
 bg_color = Color(0.772549, 0.615686, 0.254902, 1)
@@ -26,11 +26,11 @@ corner_radius_top_right = 50
 corner_radius_bottom_right = 50
 corner_radius_bottom_left = 50
 
-[node name="winlevel1" type="Node2D"]
+[node name="winlevel1" type="Node2D" unique_id=1503516744]
 position = Vector2(576, 324)
-script = ExtResource("1_xbadw")
+script = ExtResource("1_8v2ct")
 
-[node name="BG" type="TextureRect" parent="."]
+[node name="BG" type="TextureRect" parent="." unique_id=498152081]
 anchors_preset = -1
 anchor_left = 0.5
 anchor_right = 0.5
@@ -41,68 +41,68 @@ offset_right = 576.0
 offset_bottom = 324.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_jhaom")
+texture = ExtResource("2_v2m4w")
 
-[node name="home" type="Button" parent="."]
+[node name="home" type="Button" parent="." unique_id=1460430571]
 offset_left = -448.0
 offset_top = 220.0
 offset_right = -193.0
 offset_bottom = 317.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_80hn0")
+theme_override_fonts/font = ExtResource("3_bdtos")
 theme_override_font_sizes/font_size = 48
 theme_override_styles/normal = SubResource("StyleBoxFlat_e0dcd")
 text = "Home"
 
-[node name="restart" type="Button" parent="."]
+[node name="restart" type="Button" parent="." unique_id=150860266]
 offset_left = -128.0
 offset_top = 220.0
 offset_right = 127.0
 offset_bottom = 317.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_80hn0")
+theme_override_fonts/font = ExtResource("3_bdtos")
 theme_override_font_sizes/font_size = 48
 theme_override_styles/normal = SubResource("StyleBoxFlat_e0dcd")
 text = "Restart"
 
-[node name="next" type="Button" parent="."]
+[node name="next" type="Button" parent="." unique_id=263217319]
 offset_left = 192.0
 offset_top = 228.0
 offset_right = 448.0
 offset_bottom = 325.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_80hn0")
+theme_override_fonts/font = ExtResource("3_bdtos")
 theme_override_font_sizes/font_size = 48
 theme_override_styles/normal = SubResource("StyleBoxFlat_e0dcd")
 text = "Next"
 
-[node name="pathline" type="Line2D" parent="."]
+[node name="pathline" type="Line2D" parent="." unique_id=1927430654]
 position = Vector2(-450, 90)
 points = PackedVector2Array(0, -8)
 default_color = Color(0, 0, 0, 1)
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1412703909]
 
-[node name="ResultLabel" type="Label" parent="."]
+[node name="ResultLabel" type="Label" parent="." unique_id=1933256817]
 offset_left = -360.0
 offset_top = -284.0
 offset_right = -320.0
 offset_bottom = -231.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_80hn0")
+theme_override_fonts/font = ExtResource("3_bdtos")
 theme_override_font_sizes/font_size = 36
 theme_override_styles/normal = SubResource("StyleBoxFlat_p2ena")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="CharacterNode" type="Sprite2D" parent="."]
+[node name="CharacterNode" type="Sprite2D" parent="." unique_id=1257192311]
 visible = false
 position = Vector2(334, 242)
 scale = Vector2(0.15, 0.15)
-texture = ExtResource("4_bopdc")
+texture = ExtResource("4_vmier")
 centered = false
 
-[node name="Label" type="Label" parent="."]
+[node name="Label" type="Label" parent="." unique_id=584887744]
 anchors_preset = -1
 anchor_right = 0.5
 offset_left = -552.0
@@ -114,7 +114,7 @@ size_flags_horizontal = 4
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0.362829, 0.362829, 0.362829, 1)
 theme_override_colors/font_outline_color = Color(0.813458, 0.850611, 0.311767, 1)
-theme_override_fonts/font = ExtResource("2_80hn0")
+theme_override_fonts/font = ExtResource("3_bdtos")
 theme_override_font_sizes/font_size = 72
 theme_override_styles/normal = SubResource("StyleBoxFlat_lhfhc")
 text = "Win"

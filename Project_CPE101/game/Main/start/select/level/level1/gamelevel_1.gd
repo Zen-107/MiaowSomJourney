@@ -3,7 +3,7 @@ extends Node2D
 # ==============================================================================
 # CONSTANTS (ค่าคงที่)
 # ==============================================================================
-const SCENE_WIN := "res://game/Main/start/select/level/level1/winlevel_1.tscn"
+const SCENE_WIN := "res://game/Main/winlevel_X.tscn"
 const SCENE_GAME_OVER := "res://game/Main/start/select/level/level1/game_over.tscn"
 const SCENE_MONSTER := "res://game/Main/start/select/Mon/monfight.tscn"
 const SCENE_ITEM := "res://game/Main/start/select/showitem/showitem.tscn"
@@ -217,6 +217,10 @@ func trigger_game_over() -> void:
 
 func _change_scene_to_win() -> void:
 	if is_inside_tree():
+		var ds = _get_data_store_node()
+		if ds: # ส่งจำนวนโหนดทั้งหมดของด่านนี้ไปที่ DataStore
+			ds.current_level = 1
+			ds.total_nodes_in_level = visited_buttons.keys().size()
 		var result: Error = get_tree().change_scene_to_file(SCENE_WIN)
 		if result != OK:
 			print("Error: Failed to change scene. Error code:", result)
