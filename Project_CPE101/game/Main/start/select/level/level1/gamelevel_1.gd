@@ -280,6 +280,8 @@ func _on_b_pressed() -> void:
 	else:
 		handle_monster("B", 0)
 		decrease_hp(1)
+		if hp <= 0:
+				return
 		monster_damaged["B"] = true
 	
 	visited_buttons["B"] = true
@@ -303,6 +305,8 @@ func _on_d_pressed() -> void:
 	else:
 		handle_monster("D", 0)
 		decrease_hp(1)
+		if hp <= 0:
+				return
 		monster_damaged["D"] = true
 	
 	visited_buttons["D"] = true

@@ -1,16 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://dd4d1e8d3yxpv"]
+[gd_scene format=3 uid="uid://dd4d1e8d3yxpv"]
 
 [ext_resource type="Texture2D" uid="uid://cwhha3bny232f" path="res://resource/background/LINE_ALBUM_พื้นหลัง_241126_1.jpg" id="1_atba1"]
-[ext_resource type="Script" path="res://game/Main/howto/howto.gd" id="1_m1y5s"]
+[ext_resource type="Script" uid="uid://5hfkfnohhoi" path="res://game/Main/howto/howto.gd" id="1_m1y5s"]
 [ext_resource type="FontFile" uid="uid://s2xisdc73rrc" path="res://resource/font/SomO/SomODemo.ttf" id="2_81r5r"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mdakv"]
 bg_color = Color(0.774401, 0.614317, 0.2552, 0.847059)
 
-[node name="howto" type="Node2D"]
+[node name="howto" type="Node2D" unique_id=462409780]
 script = ExtResource("1_m1y5s")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1521840279]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -22,7 +22,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = ExtResource("1_atba1")
 
-[node name="TextureRect2" type="TextureRect" parent="."]
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=319100346]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -36,7 +36,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 expand_mode = 1
 
-[node name="Label" type="Label" parent="."]
+[node name="Label" type="Label" parent="." unique_id=2103172710]
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
@@ -54,7 +54,7 @@ theme_override_fonts/font = ExtResource("2_81r5r")
 theme_override_font_sizes/font_size = 36
 text = "How to play ...."
 
-[node name="Back" type="Button" parent="."]
+[node name="Back" type="Button" parent="." unique_id=1346574734]
 offset_left = 27.0
 offset_top = 26.0
 offset_right = 185.0

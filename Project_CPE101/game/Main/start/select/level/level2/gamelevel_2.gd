@@ -284,6 +284,8 @@ func _on_b_pressed() -> void:
 		handle_monster("B", 0) # Index 0
 		if not has_sword:
 			decrease_hp(1) # จะเสียเลือดก็ต่อเมื่อไม่มีดาบขี้เรืองแสง
+			if hp <= 0:
+				return
 		monster_damaged["B"] = true
 	
 	visited_buttons["B"] = true
@@ -303,6 +305,8 @@ func _on_c_pressed() -> void:
 		handle_monster("C", 2)  # ส่งปุ่ม "C" และตำแหน่งมอนสเตอร์ในลิสต์ (เช่น 2)
 		if not has_sword:
 			decrease_hp(2)  # ลดเลือดถ้าไม่มีดาบ
+			if hp <= 0:
+				return
 		monster_damaged["C"] = true  # มาร์คว่ามอนสเตอร์ตัวนี้ถูกจัดการแล้ว
 	visited_buttons["C"] = true
 	move_to_button(button_c, [button_g])
@@ -314,6 +318,8 @@ func _on_d_pressed() -> void:
 	else:
 		handle_monster("D", 1) # Index 1
 		decrease_hp(1)
+		if hp <= 0:
+				return
 		monster_damaged["D"] = true
 	
 	visited_buttons["D"] = true
@@ -333,7 +339,7 @@ func _on_e_pressed() -> void:
 	_record_path(button_e)
 
 func _on_f_pressed() -> void:
-	heal_hp(1) # เพิ่ม HP เล็กน้อยเมื่อเก็บไอเทม (ตาม Logic เดิมที่ decrease_hp(-1))
+	heal_hp(1) # เพิ่ม HP 
 	has_armor = true
 	character.texture = armor_character_texture
 	visited_buttons["F"] = true
