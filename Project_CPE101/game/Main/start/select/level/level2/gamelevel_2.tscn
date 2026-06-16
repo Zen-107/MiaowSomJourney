@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bsm8wdmgs1lao"]
 
 [ext_resource type="Script" uid="uid://bdmd5411jn6ql" path="res://game/Main/start/select/level/level2/gamelevel_2.gd" id="1_wnpqo"]
-[ext_resource type="Texture2D" uid="uid://cn60cc32jfoqd" path="res://resource/background/LINE_ALBUM_พื้นหลัง_241126_4.jpg" id="1_yx2et"]
+[ext_resource type="Texture2D" uid="uid://u0ejnj3aquy" path="res://resource/ElementHTPnAB/IMG_0841.JPG" id="2_4escd"]
 [ext_resource type="FontFile" uid="uid://s2xisdc73rrc" path="res://resource/font/SomO/SomODemo.ttf" id="2_ngq3k"]
 [ext_resource type="Texture2D" uid="uid://tye85a8oxjb8" path="res://resource/characters/maincha/แมว.png" id="3_2ajs8"]
 [ext_resource type="Texture2D" uid="uid://d00vdrujgp72n" path="res://resource/background/line.png" id="3_efhol"]
@@ -35,7 +35,7 @@ offset_bottom = 323.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 4
-texture = ExtResource("1_yx2et")
+texture = ExtResource("2_4escd")
 metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect3" type="TextureRect" parent="TextureRect" unique_id=646562126]
