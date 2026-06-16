@@ -303,6 +303,7 @@ func _on_b_pressed() -> void:
 	_record_path(button_b)
 
 func _on_c_pressed() -> void:
+	visited_buttons["C"] = true
 	if monster_damaged["C"]:
 		display_popup_message("มอนสเตอร์ในปุ่มนี้เคยพ่ายแพ้แล้ว!")
 	else:
@@ -318,15 +319,6 @@ func _on_c_pressed() -> void:
 	if visited_buttons["G"]:
 		next_buttons.append(button_a)
 	move_to_button(button_c, next_buttons)
-
-	"""
-	visited_buttons["C"] = true
-	var next_buttons: Array[Button] = []
-	if not visited_buttons["G"]: next_buttons.append(button_g)
-	if not visited_buttons["F"]: next_buttons.append(button_f)
-	if visited_buttons["G"] and visited_buttons["F"]: next_buttons.append(button_a)
-	move_to_button(button_c, next_buttons)
-	"""
 	_record_path(button_c)
 
 func _on_d_pressed() -> void:
