@@ -350,8 +350,9 @@ func _on_e_pressed() -> void:
 func _on_f_pressed() -> void:
 	heal_hp(1) # ใช้น้ำวิเศษเพิ่ม HP
 	visited_buttons["F"] = true
-	
-	move_to_button(button_f, [button_i])
+	var next_buttons: Array[Button] = [button_i]
+	move_to_button(button_f, next_buttons)
+	#move_to_button(button_f, [button_i])
 	pause_item(0) # 0 = น้ำวิเศษ
 	_record_path(button_f)
 
@@ -377,6 +378,7 @@ func _on_i_pressed() -> void:
 	visited_buttons["I"] = true
 	_record_path(button_i)
 	call_deferred("_change_scene_to_win")
+
 
 func _on_more_pressed() -> void:
 	get_tree().change_scene_to_file(SCENE_MORE)
