@@ -193,6 +193,7 @@ func handle_monster(button_name: String, monster_index: int) -> void:
 		return
 	
 	if has_sword:
+		print("ใช้ดาบปราบมอนสเตอร์ได้สำเร็จ!")
 		character.texture = sword_character_texture
 		monster_damaged[button_name] = true
 		display_popup_message("คุณเอาชนะมอนสเตอร์ด้วยแสงจากดาบขี้เรืองแสง!")
@@ -281,7 +282,8 @@ func _on_b_pressed() -> void:
 		display_popup_message("มอนสเตอร์ในปุ่มนี้เคยพ่ายแพ้แล้ว!")
 	else:
 		handle_monster("B", 0) # Index 0
-		decrease_hp(1)
+		if not has_sword:
+			decrease_hp(1) # จะเสียเลือดก็ต่อเมื่อไม่มีดาบขี้เรืองแสง
 		monster_damaged["B"] = true
 	
 	visited_buttons["B"] = true
