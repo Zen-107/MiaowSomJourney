@@ -205,7 +205,7 @@ func encounter_monster(button_name: String, monster_index: int) -> void:
 		return
 	
 	var monster_instance: Node = monster_scene.instantiate()
-	get_tree().root.add_child(monster_instance)
+	add_child(monster_instance)
 	
 	if mons.size() > monster_index:
 		monster_instance.call_deferred("set_item_data", mons[monster_index])
@@ -291,6 +291,8 @@ func _on_b_pressed() -> void:
 		handle_monster("B", 0) # Index 0
 		if not has_sword:
 			decrease_hp(1) # จะเสียเลือดก็ต่อเมื่อไม่มีดาบขี้เรืองแสง
+			if hp <= 0:
+				return
 		monster_damaged["B"] = true
 	
 	visited_buttons["B"] = true
@@ -310,6 +312,8 @@ func _on_c_pressed() -> void:
 		handle_monster("C", 2) # Index 2
 		if not has_sword:
 			decrease_hp(2) # มอนสเตอร์ C ลด 2 HP
+			if hp <= 0:
+				return
 		monster_damaged["C"] = true
 	var next_buttons: Array[Button] = []
 	if not visited_buttons["A"]:  
@@ -328,6 +332,8 @@ func _on_d_pressed() -> void:
 		handle_monster("D", 1) # Index 1
 		if not has_sword:
 			decrease_hp(2) # มอนสเตอร์ D ลด 2 HP 
+			if hp <= 0:
+				return
 		monster_damaged["D"] = true
 	
 	visited_buttons["D"] = true
