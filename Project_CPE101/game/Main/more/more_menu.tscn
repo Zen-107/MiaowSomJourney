@@ -1,7 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://d23mx4nk7612s"]
+[gd_scene format=3 uid="uid://d23mx4nk7612s"]
 
-[ext_resource type="Texture2D" uid="uid://cwhha3bny232f" path="res://resource/background/LINE_ALBUM_พื้นหลัง_241126_1.jpg" id="1_5cf2e"]
-[ext_resource type="Script" path="res://game/Main/more/more_menu.gd" id="1_h1rje"]
+[ext_resource type="Script" uid="uid://bmt1f43errn4q" path="res://game/Main/more/more_menu.gd" id="1_h1rje"]
+[ext_resource type="Texture2D" uid="uid://bnv464cbg52pv" path="res://resource/background/S__6529027.jpg" id="2_5xrnq"]
 [ext_resource type="FontFile" uid="uid://s2xisdc73rrc" path="res://resource/font/SomO/SomODemo.ttf" id="2_fk1gc"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wh0vv"]
@@ -10,7 +10,7 @@ bg_color = Color(0.772549, 0.615686, 0.254902, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sbbis"]
 bg_color = Color(0.772549, 0.615686, 0.254902, 1)
 
-[node name="More_menu" type="Control"]
+[node name="More_menu" type="Control" unique_id=1356283070]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -19,16 +19,16 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_h1rje")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1106387398]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_5cf2e")
+texture = ExtResource("2_5xrnq")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="TextureRect"]
+[node name="VBoxContainer" type="VBoxContainer" parent="TextureRect" unique_id=397319332]
 layout_mode = 1
 anchors_preset = 13
 anchor_left = 0.5
@@ -40,7 +40,7 @@ offset_right = 128.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Start" type="Button" parent="TextureRect/VBoxContainer"]
+[node name="Start" type="Button" parent="TextureRect/VBoxContainer" unique_id=1793453847]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_fk1gc")
@@ -48,7 +48,7 @@ theme_override_font_sizes/font_size = 36
 theme_override_styles/normal = SubResource("StyleBoxFlat_wh0vv")
 text = "Start"
 
-[node name="howto" type="Button" parent="TextureRect/VBoxContainer"]
+[node name="howto" type="Button" parent="TextureRect/VBoxContainer" unique_id=529829122]
 layout_mode = 2
 size_flags_vertical = 4
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -57,7 +57,7 @@ theme_override_font_sizes/font_size = 36
 theme_override_styles/normal = SubResource("StyleBoxFlat_wh0vv")
 text = "How to play"
 
-[node name="story" type="Button" parent="TextureRect/VBoxContainer"]
+[node name="story" type="Button" parent="TextureRect/VBoxContainer" unique_id=2020909984]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_fk1gc")
@@ -65,7 +65,7 @@ theme_override_font_sizes/font_size = 36
 theme_override_styles/normal = SubResource("StyleBoxFlat_wh0vv")
 text = "About"
 
-[node name="hide back" type="Button" parent="TextureRect"]
+[node name="hide back" type="Button" parent="TextureRect" unique_id=787358199]
 clip_contents = true
 layout_direction = 1
 layout_mode = 1
@@ -80,7 +80,7 @@ action_mode = 0
 button_mask = 7
 keep_pressed_outside = true
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="TextureRect"]
+[node name="VBoxContainer2" type="VBoxContainer" parent="TextureRect" unique_id=1400622776]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.13
@@ -90,7 +90,7 @@ offset_top = 13.0
 offset_right = 980.24
 offset_bottom = 156.384
 
-[node name="More" type="Button" parent="TextureRect/VBoxContainer2"]
+[node name="More" type="Button" parent="TextureRect/VBoxContainer2" unique_id=2085245943]
 visible = false
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -99,7 +99,7 @@ theme_override_font_sizes/font_size = 36
 theme_override_styles/normal = SubResource("StyleBoxFlat_sbbis")
 text = "More"
 
-[node name="credit" type="Button" parent="TextureRect/VBoxContainer2"]
+[node name="credit" type="Button" parent="TextureRect/VBoxContainer2" unique_id=1774334022]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_fk1gc")
@@ -107,7 +107,7 @@ theme_override_font_sizes/font_size = 36
 theme_override_styles/normal = SubResource("StyleBoxFlat_sbbis")
 text = "Credit"
 
-[node name="Exit" type="Button" parent="TextureRect/VBoxContainer2"]
+[node name="Exit" type="Button" parent="TextureRect/VBoxContainer2" unique_id=536601373]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_fk1gc")

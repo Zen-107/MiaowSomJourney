@@ -10,5 +10,3 @@ func _on_retry_pressed():
 
 func _on_home_pressed() -> void:
 	get_tree().change_scene_to_file("res://game/Main/start/select/selectAlevel.tscn")
-	await get_tree().create_timer(0.1).timeout
-	queue_free()

@@ -1,24 +1,24 @@
-[gd_scene load_steps=7 format=3 uid="uid://dnvvmpqmm7f1u"]
+[gd_scene format=3 uid="uid://dnvvmpqmm7f1u"]
 
 [ext_resource type="FontFile" uid="uid://dcoqvi18ma4jp" path="res://resource/font/SomO/SomODemo.woff" id="1_pau2u"]
-[ext_resource type="Script" path="res://game/Main/start/select/Mon/monfight.gd" id="1_tmo1e"]
+[ext_resource type="Script" uid="uid://cdhe4muridn1p" path="res://game/Main/start/select/Mon/monfight.gd" id="1_tmo1e"]
 [ext_resource type="Texture2D" uid="uid://cc56uockjwge4" path="res://resource/characters/monsters/กากเบี้ยว.PNG" id="2_s436o"]
 [ext_resource type="Texture2D" uid="uid://tye85a8oxjb8" path="res://resource/characters/maincha/แมว.png" id="3_a53xp"]
 [ext_resource type="FontFile" uid="uid://s2xisdc73rrc" path="res://resource/font/SomO/SomODemo.ttf" id="4_owuik"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0qsum"]
 
-[node name="monfight" type="CanvasLayer"]
+[node name="monfight" type="CanvasLayer" unique_id=956328443]
 script = ExtResource("1_tmo1e")
 
-[node name="Panel" type="Panel" parent="."]
+[node name="Panel" type="Panel" parent="." unique_id=1518480920]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="Panel"]
+[node name="Label" type="Label" parent="Panel" unique_id=1991243180]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -33,25 +33,25 @@ text = "The monster has been defeated."
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="mon1" type="Sprite2D" parent="Panel"]
+[node name="mon1" type="Sprite2D" parent="Panel" unique_id=214508522]
 position = Vector2(197, 395)
 rotation = -0.523599
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("2_s436o")
 
-[node name="mon2" type="Sprite2D" parent="Panel"]
+[node name="mon2" type="Sprite2D" parent="Panel" unique_id=394218187]
 position = Vector2(953, 346)
 rotation = 0.523599
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("2_s436o")
 
-[node name="maincha" type="Sprite2D" parent="Panel"]
+[node name="maincha" type="Sprite2D" parent="Panel" unique_id=163097796]
 position = Vector2(402, 153)
 scale = Vector2(0.35, 0.35)
 texture = ExtResource("3_a53xp")
 centered = false
 
-[node name="Close" type="Button" parent="Panel"]
+[node name="Close" type="Button" parent="Panel" unique_id=909156446]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5

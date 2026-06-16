@@ -1,6 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://byrjfiqtsgcfm"]
+[gd_scene format=3 uid="uid://byrjfiqtsgcfm"]
 
-[ext_resource type="Script" path="res://game/Main/start/select/level/level1/game_over.gd" id="1_chqf1"]
+[ext_resource type="Script" uid="uid://b25v6cons0ic3" path="res://game/Main/start/select/level/level1/game_over.gd" id="1_chqf1"]
 [ext_resource type="FontFile" uid="uid://dcoqvi18ma4jp" path="res://resource/font/SomO/SomODemo.woff" id="1_ofnpa"]
 [ext_resource type="Texture2D" uid="uid://dh7rmypgwepuh" path="res://resource/characters/monsters/กากอ้วน.PNG" id="2_05l4i"]
 [ext_resource type="FontFile" uid="uid://s2xisdc73rrc" path="res://resource/font/SomO/SomODemo.ttf" id="2_al3af"]
@@ -13,14 +13,14 @@ corner_radius_top_right = 25
 corner_radius_bottom_right = 25
 corner_radius_bottom_left = 25
 
-[node name="game over" type="Control"]
+[node name="game over" type="Control" unique_id=1641055203]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 1152.0
 offset_bottom = 648.0
 script = ExtResource("1_chqf1")
 
-[node name="Panel" type="Panel" parent="."]
+[node name="Panel" type="Panel" parent="." unique_id=1568742124]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -28,7 +28,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="TextureRect" type="TextureRect" parent="." unique_id=718815700]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -44,7 +44,7 @@ grow_vertical = 2
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_05l4i")
 
-[node name="Label" type="Label" parent="."]
+[node name="Label" type="Label" parent="." unique_id=1591138049]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -59,7 +59,7 @@ text = "Game Over"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="TextureRect2" type="TextureRect" parent="."]
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=1785704812]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -76,7 +76,7 @@ rotation = -0.261799
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("4_gqkxj")
 
-[node name="retry" type="Button" parent="."]
+[node name="retry" type="Button" parent="." unique_id=1252383421]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = -0.889757
@@ -95,7 +95,7 @@ theme_override_font_sizes/font_size = 36
 theme_override_styles/normal = SubResource("StyleBoxFlat_nu3yv")
 text = "Retry"
 
-[node name="home" type="Button" parent="."]
+[node name="home" type="Button" parent="." unique_id=1907367907]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = -0.889757

@@ -1,6 +1,6 @@
-[gd_scene load_steps=14 format=3 uid="uid://hptfcpbmnfwi"]
+[gd_scene format=3 uid="uid://hptfcpbmnfwi"]
 
-[ext_resource type="Script" path="res://game/Main/start/select/level/level1/gamelevel_1.gd" id="1_6pbcv"]
+[ext_resource type="Script" uid="uid://cuoo6woj7uhxg" path="res://game/Main/start/select/level/level1/gamelevel_1.gd" id="1_6pbcv"]
 [ext_resource type="Texture2D" uid="uid://bp8cmveu0tkay" path="res://resource/background/LINE_ALBUM_พื้นหลัง_241126_5.jpg" id="1_7ouky"]
 [ext_resource type="FontFile" uid="uid://s2xisdc73rrc" path="res://resource/font/SomO/SomODemo.ttf" id="3_swkyt"]
 [ext_resource type="Texture2D" uid="uid://tye85a8oxjb8" path="res://resource/characters/maincha/แมว.png" id="4_81nyl"]
@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://d00vdrujgp72n" path="res://resource/background/line.png" id="6_dm13x"]
 [ext_resource type="Texture2D" uid="uid://d0fnjxj5tiujg" path="res://resource/item/ใจ.PNG" id="7_o8sf3"]
 [ext_resource type="Texture2D" uid="uid://ccdmnao57elfe" path="res://resource/characters/princess/ปลาทูนูน.PNG" id="8_wofjr"]
-[ext_resource type="Script" path="res://game/Main/data_store.gd" id="9_s1ymh"]
+[ext_resource type="Script" uid="uid://66cu8nort3n4" path="res://game/Main/data_store.gd" id="9_s1ymh"]
 [ext_resource type="FontFile" uid="uid://dcoqvi18ma4jp" path="res://resource/font/SomO/SomODemo.woff" id="10_0jec5"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8tcxf"]
@@ -28,11 +28,11 @@ corner_radius_bottom_left = 25
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1kbjr"]
 texture = ExtResource("7_o8sf3")
 
-[node name="gamelevel1" type="Node2D"]
+[node name="gamelevel1" type="Node2D" unique_id=7389090]
 position = Vector2(576, 324)
 script = ExtResource("1_6pbcv")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="TextureRect" type="TextureRect" parent="." unique_id=836984831]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -45,14 +45,14 @@ grow_vertical = 2
 size_flags_vertical = 4
 texture = ExtResource("1_7ouky")
 
-[node name="maincha" type="Sprite2D" parent="TextureRect"]
+[node name="maincha" type="Sprite2D" parent="TextureRect" unique_id=1055294389]
 visible = false
 position = Vector2(334, 242)
 scale = Vector2(0.15, 0.15)
 texture = ExtResource("4_81nyl")
 centered = false
 
-[node name="TextureRect2" type="TextureRect" parent="TextureRect"]
+[node name="TextureRect2" type="TextureRect" parent="TextureRect" unique_id=259761376]
 layout_mode = 0
 offset_left = 376.0
 offset_top = 321.0
@@ -60,7 +60,7 @@ offset_right = 712.0
 offset_bottom = 401.0
 texture = ExtResource("6_dm13x")
 
-[node name="TextureRect3" type="TextureRect" parent="TextureRect"]
+[node name="TextureRect3" type="TextureRect" parent="TextureRect" unique_id=4299066]
 layout_mode = 0
 offset_left = 318.0
 offset_top = 349.0
@@ -69,7 +69,7 @@ offset_bottom = 429.0
 rotation = -0.698132
 texture = ExtResource("6_dm13x")
 
-[node name="TextureRect4" type="TextureRect" parent="TextureRect"]
+[node name="TextureRect4" type="TextureRect" parent="TextureRect" unique_id=404480584]
 layout_mode = 0
 offset_left = 376.0
 offset_top = 337.0
@@ -78,7 +78,7 @@ offset_bottom = 417.0
 rotation = 0.698132
 texture = ExtResource("6_dm13x")
 
-[node name="TextureRect5" type="TextureRect" parent="TextureRect"]
+[node name="TextureRect5" type="TextureRect" parent="TextureRect" unique_id=1858552807]
 layout_mode = 0
 offset_left = 528.0
 offset_top = 469.0
@@ -86,7 +86,7 @@ offset_right = 766.0
 offset_bottom = 549.0
 texture = ExtResource("6_dm13x")
 
-[node name="A" type="Button" parent="TextureRect"]
+[node name="A" type="Button" parent="TextureRect" unique_id=1978811677]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = -0.641493
@@ -105,7 +105,7 @@ keep_pressed_outside = true
 text = "A"
 metadata/_edit_use_anchors_ = true
 
-[node name="B" type="Button" parent="TextureRect"]
+[node name="B" type="Button" parent="TextureRect" unique_id=1298704662]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = -0.466146
@@ -123,7 +123,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_8tcxf")
 text = "B"
 metadata/_edit_use_anchors_ = true
 
-[node name="C" type="Button" parent="TextureRect"]
+[node name="C" type="Button" parent="TextureRect" unique_id=180192417]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = -0.471354
@@ -141,7 +141,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_8tcxf")
 text = "C"
 metadata/_edit_use_anchors_ = true
 
-[node name="D" type="Button" parent="TextureRect"]
+[node name="D" type="Button" parent="TextureRect" unique_id=1356648811]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = -0.47309
@@ -159,7 +159,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_8tcxf")
 text = "D"
 metadata/_edit_use_anchors_ = true
 
-[node name="E" type="Button" parent="TextureRect"]
+[node name="E" type="Button" parent="TextureRect" unique_id=761976169]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = -0.292535
@@ -177,7 +177,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_8tcxf")
 text = "E"
 metadata/_edit_use_anchors_ = true
 
-[node name="F" type="Button" parent="TextureRect"]
+[node name="F" type="Button" parent="TextureRect" unique_id=1555539190]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = -0.292535
@@ -195,7 +195,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_8tcxf")
 text = "F"
 metadata/_edit_use_anchors_ = true
 
-[node name="hint" type="Button" parent="TextureRect"]
+[node name="hint" type="Button" parent="TextureRect" unique_id=1086806467]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = -0.889757
@@ -213,7 +213,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_2hxu5")
 text = "Hint"
 metadata/_edit_use_anchors_ = true
 
-[node name="More" type="Button" parent="."]
+[node name="More" type="Button" parent="." unique_id=606805617]
 offset_left = 473.0
 offset_top = -304.0
 offset_right = 547.0
@@ -225,7 +225,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_2hxu5")
 text = "Quit"
 metadata/_edit_use_anchors_ = true
 
-[node name="morelevel1" parent="More" instance=ExtResource("5_d5d25")]
+[node name="morelevel1" parent="More" unique_id=1756845590 instance=ExtResource("5_d5d25")]
 visible = false
 layout_mode = 1
 anchors_preset = 8
@@ -240,7 +240,7 @@ offset_bottom = 277.5
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="HPlabel" type="Label" parent="."]
+[node name="HPlabel" type="Label" parent="." unique_id=2119391867]
 offset_left = -544.0
 offset_top = -308.0
 offset_right = -456.0
@@ -251,15 +251,15 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_1kbjr")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ปลาทูนูน" type="Sprite2D" parent="."]
+[node name="ปลาทูนูน" type="Sprite2D" parent="." unique_id=1748584270]
 position = Vector2(200, 12)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("8_wofjr")
 
-[node name="DataStore" type="Node" parent="."]
+[node name="DataStore" type="Node" parent="." unique_id=496298530]
 script = ExtResource("9_s1ymh")
 
-[node name="Popuplabel" type="Label" parent="."]
+[node name="Popuplabel" type="Label" parent="." unique_id=1868865528]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
