@@ -52,39 +52,11 @@ var monster_damaged: Dictionary = {
 	"B": false, "D": false
 }
 
-# ข้อมูลไอเทมและมอนสเตอร์
-var items = [
-	{
-		"name": "น้ำวิเศษ",
-		"description": "เครื่องดื่มหวานปนขมทำให้อยากดื่มเรื่อยๆสามารถเพิ่มเลือด 1 HP ",
-		"texture": preload("res://resource/item/ยา2.PNG")
-	},
-	{
-		"name": "เกราะแดง",
-		"description": "เกราะสีแดงที่งดงาม สามารถป้องกันได้ 1 HP ",
-		"texture": preload("res://resource/item/เกราะแดง.PNG")
-	},
-	{
-		"name": "ดาบขี้เรืองแสง",
-		"description": "ดาบที่ไม่คมแต่แสงนั้น!!! แสบตามาก แต่เรามีแว่นกันแดด เมื่อหยิบดาบขึ้นมอนสเตอร์ทุกตัวต่างต้องหลับตาเพราะแสงของมัน ทำให้คุณเดินผ่านมันไปได้อย่างราบรื่น",
-		"texture": preload("res://resource/item/ดาบขี้เรืองแสง.PNG")
-	}
-]
-
-var mons = [
-	{
-		"mon1": preload("res://resource/characters/monsters/กากเบี้ยว.PNG"),
-		"mon2": preload("res://resource/characters/monsters/กากเบี้ยว.PNG")
-	},
-	{
-		"mon1": preload("res://resource/characters/monsters/กากเบี้ยว.PNG"),
-		"mon2": preload("res://resource/characters/monsters/กีกี้คนสวย.PNG")
-	},
-	{
-		"mon1": preload("res://resource/characters/monsters/กีกี้คนสวย.PNG"),
-		"mon2": preload("res://resource/characters/monsters/นุ่ยนุ้ยนาย.PNG")
-	}
-]
+# ==============================================================================
+# GAME DATA REFERENCES (อ้างอิงข้อมูลจากไฟล์กลาง)
+# ==============================================================================
+# ใช้ const reference จากไฟล์กลาง ไม่ต้องประกาศซ้ำ
+# เรียกใช้งานผ่าน ItemData.ITEMS และ MonsterData.MONSTERS
 
 # ==============================================================================
 # CORE FUNCTIONS (ฟังก์ชันหลัก)
@@ -196,13 +168,10 @@ func encounter_monster(button_name: String, monster_index: int) -> void:
 	if not monster_scene:
 		print("Error: ไม่สามารถโหลดฉาก Monfight ได้!")
 		return
-
 	var monster_instance: Node = monster_scene.instantiate()
-	get_tree().root.add_child(monster_instance)
-
-	if mons.size() > monster_index:
-		monster_instance.call_deferred("set_item_data", mons[monster_index])
-
+	add_child(monster_instance)
+	if MonsterData.get_monster_count() > monster_index:
+		monster_instance.call_deferred("set_item_data", MonsterData.get_monster(monster_index))
 	if monster_instance.has_signal("fight_ended"):
 		monster_instance.fight_ended.connect(Callable(self, "_on_monster_fight_ended").bind(button_name))
 	else:
@@ -239,11 +208,11 @@ func pause_item(item_index: int) -> void:
 	if get_tree().paused:
 		get_tree().paused = false
 	else:
-		if item_index >= 0 and item_index < items.size():
+		if item_index >= 0 and item_index < ItemData.get_item_count():
 			var item_instance = item_scene.instantiate()
 			get_tree().root.add_child(item_instance)
-			print("Selected Item: ", items[item_index]["name"])
-			item_instance.call_deferred("set_item_data", items[item_index])
+			print("Selected Item: ", ItemData.get_item(item_index)["name"])
+			item_instance.call_deferred("set_item_data", ItemData.get_item(item_index))
 			get_tree().paused = true
 
 func _on_show_hint() -> void:
