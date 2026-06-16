@@ -123,9 +123,13 @@ func _ready() -> void:
 # HELPER FUNCTIONS (ฟังก์ชันช่วยงาน)
 # ==============================================================================
 func _get_data_store_node() -> Node:
+	if not is_inside_tree():
+		return null
 	return get_tree().root.get_node_or_null("DataStore")
 
 func _record_path(button: Button) -> void:
+	if not is_inside_tree():
+		return
 	var ds = _get_data_store_node()
 	if ds:
 		ds.add_path_button(button.name)
@@ -224,6 +228,10 @@ func trigger_game_over() -> void:
 
 func _change_scene_to_win() -> void:
 	if is_inside_tree():
+		var ds = _get_data_store_node()
+		if ds: # ส่งจำนวนโหนดทั้งหมดของด่านนี้ไปที่ DataStore
+			ds.current_level = 2
+			ds.total_nodes_in_level = visited_buttons.keys().size()
 		var result: Error = get_tree().change_scene_to_file(SCENE_WIN)
 		if result != OK:
 			print("Error: Failed to change scene. Error code:", result)
@@ -286,13 +294,14 @@ func _on_b_pressed() -> void:
 	_record_path(button_b)
 
 func _on_c_pressed() -> void:
+	# ตรวจสอบว่ามีมอนสเตอร์ในปุ่มนี้หรือไม่
 	if monster_damaged["C"]:
 		display_popup_message("มอนสเตอร์ในปุ่มนี้เคยพ่ายแพ้แล้ว!")
 	else:
-		handle_monster("C", 2) # Index 2
-		decrease_hp(2)
-		monster_damaged["C"] = true
-	
+		handle_monster("C", 2)  # ส่งปุ่ม "C" และตำแหน่งมอนสเตอร์ในลิสต์ (เช่น 2)
+		if not has_sword:
+			decrease_hp(2)  # ลดเลือดถ้าไม่มีดาบ
+		monster_damaged["C"] = true  # มาร์คว่ามอนสเตอร์ตัวนี้ถูกจัดการแล้ว
 	visited_buttons["C"] = true
 	move_to_button(button_c, [button_g])
 	_record_path(button_c)

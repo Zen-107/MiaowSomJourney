@@ -114,9 +114,13 @@ func _ready() -> void:
 # HELPER FUNCTIONS (ฟังก์ชันช่วยงาน)
 # ==============================================================================
 func _get_data_store_node() -> Node:
+	if not is_inside_tree():
+		return null
 	return get_tree().root.get_node_or_null("DataStore")
 
 func _record_path(button: Button) -> void:
+	if not is_inside_tree():
+		return
 	var ds = _get_data_store_node()
 	if ds:
 		ds.add_path_button(button.name)
