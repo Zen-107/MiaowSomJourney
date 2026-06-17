@@ -19,3 +19,6 @@ func _on_back_pressed() -> void:
 func _on_level_pressed() -> void:
 	#pass # Replace with function body.
 	get_tree().change_scene_to_file("res://game/Main/start/select/selectAlevel.tscn")
+
+func _on_create_pressed() -> void:
+	get_tree().change_scene_to_file("res://game/Main/start/matrix_graph_builder.tscn")

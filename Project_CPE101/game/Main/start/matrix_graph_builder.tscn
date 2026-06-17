@@ -1,0 +1,86 @@
+[gd_scene format=3 uid="uid://bwry3ulq3d48d"]
+
+[ext_resource type="Script" uid="uid://ccinxcwfvy2h8" path="res://game/Main/start/matrix_graph_builder.gd" id="1_kxesk"]
+[ext_resource type="FontFile" uid="uid://s2xisdc73rrc" path="res://resource/font/SomO/SomODemo.ttf" id="1_wu6cl"]
+[ext_resource type="Script" uid="uid://detav7nhujqwd" path="res://game/Main/start/graph_drawer.gd" id="2_jgc2c"]
+
+[node name="MatrixGraphBuilder" type="Control" unique_id=530592566]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_kxesk")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=2079684695]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=1408560723]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=617505435]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=1356526528]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_wu6cl")
+theme_override_font_sizes/font_size = 50
+text = "ขนาดเมทริกซ์ (N x N)"
+
+[node name="SizeInput" type="SpinBox" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=1315525810]
+layout_mode = 2
+min_value = 2.0
+max_value = 10.0
+value = 4.0
+
+[node name="GenerateGridBtn" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=432021069]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_wu6cl")
+theme_override_font_sizes/font_size = 30
+text = "กรอกข้อมูลเมทริกซ์"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=1429403594]
+custom_minimum_size = Vector2(0, 250)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MatrixInputGrid" type="GridContainer" parent="MarginContainer/HBoxContainer/VBoxContainer/ScrollContainer" unique_id=909778997]
+layout_mode = 2
+columns = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=1258692647]
+layout_mode = 2
+alignment = 1
+
+[node name="ClearBtn" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=77135033]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_wu6cl")
+theme_override_font_sizes/font_size = 30
+text = "ล้างข้อมูล"
+
+[node name="BackBtn" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=1762243682]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_wu6cl")
+theme_override_font_sizes/font_size = 30
+text = "กลับเมนูหลัก"
+
+[node name="StatusLabel" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=678870781]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/HBoxContainer" unique_id=539101325]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="GraphDisplay" type="Control" parent="MarginContainer/HBoxContainer/PanelContainer" unique_id=237492298]
+custom_minimum_size = Vector2(400, 400)
+layout_mode = 2
+script = ExtResource("2_jgc2c")
+
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/ClearBtn" to="." method="_on_clear_btn_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/BackBtn" to="." method="_on_back_btn_pressed"]

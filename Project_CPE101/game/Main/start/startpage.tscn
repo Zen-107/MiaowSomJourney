@@ -1,6 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://buyprh36a22h1"]
+[gd_scene format=3 uid="uid://buyprh36a22h1"]
 
-[ext_resource type="Script" path="res://game/Main/start/startpage.gd" id="1_7fe6q"]
+[ext_resource type="Script" uid="uid://dion08a0nnpqu" path="res://game/Main/start/startpage.gd" id="1_7fe6q"]
 [ext_resource type="Texture2D" uid="uid://bp8cmveu0tkay" path="res://resource/background/LINE_ALBUM_พื้นหลัง_241126_5.jpg" id="1_84gob"]
 [ext_resource type="FontFile" uid="uid://s2xisdc73rrc" path="res://resource/font/SomO/SomODemo.ttf" id="2_f572a"]
 
@@ -17,7 +17,7 @@ shadow_color = Color(0.251225, 0.191, 0.0496158, 1)
 shadow_size = 3
 shadow_offset = Vector2(2, 5)
 
-[node name="Startpage" type="Control"]
+[node name="Startpage" type="Control" unique_id=1625537939]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -26,7 +26,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_7fe6q")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="TextureRect" type="TextureRect" parent="." unique_id=243046000]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -35,8 +35,8 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_84gob")
 
-[node name="level" type="Button" parent="TextureRect"]
-layout_mode = 2
+[node name="level" type="Button" parent="TextureRect" unique_id=153367597]
+layout_mode = 0
 offset_left = 352.0
 offset_top = 168.0
 offset_right = 792.0
@@ -47,8 +47,8 @@ theme_override_font_sizes/font_size = 36
 theme_override_styles/normal = SubResource("StyleBoxFlat_yhuqe")
 text = "level"
 
-[node name="Label" type="Label" parent="TextureRect"]
-layout_mode = 2
+[node name="Label" type="Label" parent="TextureRect" unique_id=1114815836]
+layout_mode = 0
 offset_left = 284.0
 offset_top = 231.0
 offset_right = 859.0
@@ -59,8 +59,8 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_iuecn")
 text = "ด่านปกติที่คุณต้องต่อสู้กับมอนเตอร์และผ่าฟันอุปสรรคเพื่อไปหาเจ้าหญิง"
 horizontal_alignment = 1
 
-[node name="Create" type="Button" parent="TextureRect"]
-layout_mode = 2
+[node name="Create" type="Button" parent="TextureRect" unique_id=407686256]
+layout_mode = 0
 offset_left = 432.0
 offset_top = 392.0
 offset_right = 730.0
@@ -70,11 +70,10 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_f572a")
 theme_override_font_sizes/font_size = 36
 theme_override_styles/normal = SubResource("StyleBoxFlat_yhuqe")
-disabled = true
 text = "Create Map"
 
-[node name="load" type="Button" parent="TextureRect"]
-layout_mode = 2
+[node name="load" type="Button" parent="TextureRect" unique_id=174543346]
+layout_mode = 0
 offset_left = 432.0
 offset_top = 472.0
 offset_right = 730.0
@@ -86,8 +85,8 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_yhuqe")
 disabled = true
 text = "Load"
 
-[node name="Back" type="Button" parent="TextureRect"]
-layout_mode = 2
+[node name="Back" type="Button" parent="TextureRect" unique_id=841434951]
+layout_mode = 0
 offset_left = 22.0
 offset_top = 29.0
 offset_right = 180.0
@@ -99,4 +98,5 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_yhuqe")
 text = "Back"
 
 [connection signal="pressed" from="TextureRect/level" to="." method="_on_level_pressed"]
+[connection signal="pressed" from="TextureRect/Create" to="." method="_on_create_pressed"]
 [connection signal="pressed" from="TextureRect/Back" to="." method="_on_back_pressed"]
