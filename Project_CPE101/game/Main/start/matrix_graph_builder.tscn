@@ -80,7 +80,6 @@ layout_mode = 2
 size_flags_horizontal = 3
 
 [node name="GraphDisplay" type="Control" parent="MarginContainer/HBoxContainer/PanelContainer" unique_id=237492298]
-custom_minimum_size = Vector2(400, 400)
 layout_mode = 2
 script = ExtResource("2_jgc2c")
 
