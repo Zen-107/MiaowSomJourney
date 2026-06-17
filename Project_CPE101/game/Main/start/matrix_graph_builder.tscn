@@ -72,6 +72,8 @@ text = "กลับเมนูหลัก"
 
 [node name="StatusLabel" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=678870781]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("1_wu6cl")
+theme_override_font_sizes/font_size = 20
 
 [node name="PanelContainer" type="PanelContainer" parent="MarginContainer/HBoxContainer" unique_id=539101325]
 layout_mode = 2
